@@ -1,0 +1,35 @@
+{
+  "name": "react-tdd",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:toolsrepo/react-tdd.git",
+  "author": "Debasish Nath <nath.debasish@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "test" : "jest"
+  },
+  "dependencies": {
+    "react": "^16.5.2"
+  },
+  "devDependencies": {
+    "@babel/core": "7.0.0-beta.47",
+		"@babel/preset-env": "7.0.0-beta.47",
+		"babel-core": "7.0.0-bridge.0",
+    "babel-jest": "^23.6.0",
+    "enzyme": "^3.6.0",
+    "enzyme-adapter-react-16": "^1.5.0",
+    "jest": "^23.6.0"
+  },
+  "jest": {
+    "setupTestFrameworkScriptFile": "<rootDir>/test/testSetup.js",
+    "testURL": "http://localhost:9000",
+    "moduleNameMapper": {
+      "src(.*)$": "<rootDir>/src/$1"
+    },
+    "globals": {
+      "__DEV__": true
+    },
+    "testRegex": "./test/.*.test.js$",
+    "rootDir": "."
+  }
+}
