@@ -6,7 +6,7 @@
   "author": "Debasish Nath <nath.debasish@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "test" : "jest"
+    "test": "jest --verbose"
   },
   "dependencies": {
     "react": "^16.5.2",
@@ -17,24 +17,43 @@
     "reactstrap": "6.5.0"
   },
   "devDependencies": {
-    "@babel/core": "7.0.0-beta.47",
-		"@babel/preset-env": "7.0.0-beta.47",
-		"babel-core": "7.0.0-bridge.0",
+    "@babel/core": "^7.0.0-beta.54",
+    "@babel/preset-env": "^7.0.0-beta.54",
+    "@babel/preset-react": "^7.0.0-beta.54",
+    "babel-core": "^7.0.0-bridge.0",
     "babel-jest": "^23.6.0",
     "enzyme": "^3.6.0",
     "enzyme-adapter-react-16": "^1.5.0",
     "jest": "^23.6.0"
   },
   "jest": {
-    "setupTestFrameworkScriptFile": "<rootDir>/test/testSetup.js",
+    "rootDir": ".",
     "testURL": "http://localhost:9000",
-    "moduleNameMapper": {
-      "src(.*)$": "<rootDir>/src/$1"
-    },
     "globals": {
       "__DEV__": true
     },
     "testRegex": "./test/.*.test.js$",
-    "rootDir": "."
+    "setupTestFrameworkScriptFile": "<rootDir>/test/testSetup.js",
+    "moduleNameMapper": {
+      "src(.*)$": "<rootDir>/src/$1"
+    },
+    "transform": {
+      "^.+\\.js$": "babel-jest"
+    },
+    "collectCoverageFrom": [
+      "src/**/*.{js,jsx,ts,tsx}",
+      "!<rootDir>/node_modules/"
+    ],
+    "coverageThreshold": {
+      "global": {
+        "branches": 90,
+        "functions": 90,
+        "lines": 90,
+        "statements": 90
+      }
+    },
+    "coverageReporters": [
+      "text"
+    ]
   }
 }
