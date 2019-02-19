@@ -6,9 +6,10 @@
   "author": "Debasish Nath <nath.debasish@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "test": "jest --verbose",
-    "test:watch": "jest --watchAll --verbose",
+    "test": "jest",
+    "test:watch": "jest --watchAll",
     "test:coverage": "jest --verbose --coverage",
+    "start": "webpack-dev-server --open --mode development",
     "build": "webpack --mode production"
   },
   "dependencies": {
