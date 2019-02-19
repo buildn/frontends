@@ -1,14 +1,16 @@
-import {Component} from 'react';
-import {render} from 'react-dom';
-import React from 'react';
+import React, { Component } from "react";
+import FormContainer from "../src/js/container/FormContainer";
 
 export default class App extends Component {
+  constructor(props) {
+    super(props);
+  }
 
-    constructor(props) {
-        super(props);
-    }
-
-    render() {
-        return <div>Hello jest from react</div>
-    }
+  render() {
+    return (
+      <React.Fragment>
+        <FormContainer />
+      </React.Fragment>
+    );
+  }
 }
